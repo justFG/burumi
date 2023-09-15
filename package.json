@@ -1,0 +1,17 @@
+{
+  "name": "kolu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bot": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.13.0",
+    "moment-timezone": "^0.5.43",
+    "string-similarity": "^4.0.4"
+  }
+}
