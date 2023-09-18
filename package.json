@@ -1,5 +1,5 @@
 {
-  "name": "kolu",
+  "name": "burumi",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,8 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@jadestudios/discord-music-player": "^9.1.1-az23",
+    "discord-music-player": "^9.1.1",
     "discord.js": "^14.13.0",
     "moment-timezone": "^0.5.43",
-    "string-similarity": "^4.0.4"
+    "string-similarity": "^4.0.4",
+    "ytdl-core": "^4.11.5"
   }
 }

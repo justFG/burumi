@@ -72,7 +72,7 @@ client.on('ready', () => {
     });
 
     client.application.commands.create({
-        name: 'play',
+        name: 'pnlplay',
         description: 'jouer de la musique.',
         type: 1,
         options: [
@@ -86,7 +86,25 @@ client.on('ready', () => {
     });
 
     client.application.commands.create({
-        name: 'find',
+        name: 'pnlresume',
+        description: 'reprendre la musique',
+        type: 1,
+    });
+
+    client.application.commands.create({
+        name: 'pnlpause',
+        description: 'pauser la musique',
+        type: 1,
+    });
+
+    client.application.commands.create({
+        name: 'pnlqueue',
+        description: 'affricher la file d\'attente des musiques',
+        type: 1,
+    });
+
+    client.application.commands.create({
+        name: 'pnlfind',
         description: 'trouver une musique.',
         type: 1,
         options: [
@@ -100,17 +118,65 @@ client.on('ready', () => {
     });
 
     client.application.commands.create({
-        name: 'mlist',
+        name: 'pnlist',
         description: 'donner la liste des musiques',
         type: 1,
     });
 
     client.application.commands.create({
-        name: 'stopbot',
-        description: 'arreter le bot',
+        name: 'pnlskip',
+        description: 'passer a la prochaine musique',
         type: 1,
     });
 
+
+   // player
+    client.application.commands.create({
+        name: 'play',
+        description: 'jouer de la musique',
+        type: 1,
+        options: [
+            {
+                name: 'musique',
+                description: 'Le nom de la musique',
+                type: 3,
+                required: true,
+            },
+        ],
+    });
+    
+    client.application.commands.create({
+        name: 'skip',
+        description: 'skiper une musique',
+        type: 1,
+    });
+    
+    client.application.commands.create({
+        name: 'stop',
+        description: 'arreter la musique',
+        type: 1,
+    });
+    
+  
+    
+    client.application.commands.create({
+        name: 'now-playing',
+        description: 'voir la musique qui ce joue en ce moment',
+        type: 1,
+    });
+    
+    client.application.commands.create({
+        name: 'pause',
+        description: 'pausé la musique',
+        type: 1,
+    });
+    
+    client.application.commands.create({
+        name: 'resume',
+        description: 'reprendre la musique',
+        type: 1,
+    });
+    
 
 
     //activity
@@ -127,15 +193,14 @@ client.on('ready', () => {
 //files check
 client.on("interactionCreate", interaction => require("./commands/purge.js")(client, interaction))
 client.on("interactionCreate", interaction => require("./commands/ping.js")(client, interaction))
-client.on("interactionCreate", interaction => require("./commands/play.js")(client, interaction))
-client.on("interactionCreate", interaction => require("./commands/recherche.js")(client, interaction))
-client.on("interactionCreate", interaction => require("./commands/mlist.js")(client, interaction))
-client.on("interactionCreate", interaction => require("./commands/bot.js")(client, interaction))
+client.on("interactionCreate", interaction => require("./commands/pnlplay.js")(client, interaction))
+client.on("interactionCreate", interaction => require("./commands/pnlfind.js")(client, interaction))
+client.on("interactionCreate", interaction => require("./commands/pnlist.js")(client, interaction))
+client.on("interactionCreate", interaction => require("./commands/player.js")(client, interaction))
 
 
+//client.on("interactionCreate", interaction => require("")(client, interaction))
 //client.on("messageCreate", message => require("./commands/jeuxmots.js")(client, message))
-//client.on("interactionCreate", interaction => require("./commands/dance.js")(client, interaction))
-
 
 //login check
 client.login(token);
