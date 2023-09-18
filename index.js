@@ -144,39 +144,38 @@ client.on('ready', () => {
             },
         ],
     });
-    
+
     client.application.commands.create({
-        name: 'skip',
-        description: 'skiper une musique',
+        name: 'urlplay',
+        description: 'jouer de la musique',
         type: 1,
+        options: [
+            {
+                name: 'url',
+                description: 'lancer une musique a partir d\'un url',
+                type: 3,
+                required: true,
+            },
+        ],
     });
-    
+
     client.application.commands.create({
         name: 'stop',
         description: 'arreter la musique',
         type: 1,
     });
     
-  
-    
     client.application.commands.create({
-        name: 'now-playing',
-        description: 'voir la musique qui ce joue en ce moment',
+        name: 'skip',
+        description: 'arreter la musique',
         type: 1,
     });
-    
+
     client.application.commands.create({
-        name: 'pause',
-        description: 'pausé la musique',
+        name: 'queue',
+        description: 'arreter la musique',
         type: 1,
     });
-    
-    client.application.commands.create({
-        name: 'resume',
-        description: 'reprendre la musique',
-        type: 1,
-    });
-    
 
 
     //activity
@@ -198,9 +197,6 @@ client.on("interactionCreate", interaction => require("./commands/pnlfind.js")(c
 client.on("interactionCreate", interaction => require("./commands/pnlist.js")(client, interaction))
 client.on("interactionCreate", interaction => require("./commands/player.js")(client, interaction))
 
-
-//client.on("interactionCreate", interaction => require("")(client, interaction))
-//client.on("messageCreate", message => require("./commands/jeuxmots.js")(client, message))
 
 //login check
 client.login(token);

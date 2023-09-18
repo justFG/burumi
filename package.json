@@ -10,11 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/voice": "^0.16.0",
     "@jadestudios/discord-music-player": "^9.1.1-az23",
     "discord-music-player": "^9.1.1",
     "discord.js": "^14.13.0",
+    "lib": "^5.0.1",
     "moment-timezone": "^0.5.43",
     "string-similarity": "^4.0.4",
+    "youtube-api-v3-search": "^1.2.1",
+    "yt-search": "^2.10.4",
     "ytdl-core": "^4.11.5"
   }
 }
