@@ -98,12 +98,6 @@ client.on('ready', () => {
     });
 
     client.application.commands.create({
-        name: 'pnlqueue',
-        description: 'affricher la file d\'attente des musiques',
-        type: 1,
-    });
-
-    client.application.commands.create({
         name: 'pnlfind',
         description: 'trouver une musique.',
         type: 1,
@@ -123,11 +117,6 @@ client.on('ready', () => {
         type: 1,
     });
 
-    client.application.commands.create({
-        name: 'pnlskip',
-        description: 'passer a la prochaine musique',
-        type: 1,
-    });
 
 
    // player
@@ -192,7 +181,7 @@ client.on('ready', () => {
 //files check
 client.on("interactionCreate", interaction => require("./commands/purge.js")(client, interaction))
 client.on("interactionCreate", interaction => require("./commands/ping.js")(client, interaction))
-client.on("interactionCreate", interaction => require("./commands/pnlplay.js")(client, interaction))
+client.on("interactionCreate", interaction => require("./commands/pnl.js")(client, interaction))
 client.on("interactionCreate", interaction => require("./commands/pnlfind.js")(client, interaction))
 client.on("interactionCreate", interaction => require("./commands/pnlist.js")(client, interaction))
 client.on("interactionCreate", interaction => require("./commands/player.js")(client, interaction))
